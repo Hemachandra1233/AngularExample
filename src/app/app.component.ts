@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'parentchild';
+
+  constructor(private route: Router) {
+
+  }
+
+  navToParent() {
+    this.route.navigate(['parent']);
+  }
+
+  navToChild() {
+    this.route.navigate(['child']);
+  }
 }
